@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -22,5 +23,22 @@ class DatabaseSeeder extends Seeder
             'email' => 'fauzi.enginer@gmail.com',
             'password' => bcrypt('password')
         ]);
+
+        Category::create([
+            'name' => 'Tanaman Buah',
+            'slug' => 'tanaman-buah'
+        ]);
+
+        Category::create([
+            'name' => 'Tanaman Hias',
+            'slug' => 'tanaman-hias'
+        ]);
+        
+        Category::create([
+            'name' => 'Pot',
+            'slug' => 'pot'
+        ]);
+
+        
     }
 }
