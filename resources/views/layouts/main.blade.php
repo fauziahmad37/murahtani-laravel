@@ -13,11 +13,11 @@
 
     <title>Hello, world!</title>
   </head>
-  <body>
+  <body style="height: 2000px;">
 
     @include('partials.navbar')
     
-    <div class="container mt-2">
+    <div class="container" style="padding-top: 5%;">
 
       @include('partials.header')
 
