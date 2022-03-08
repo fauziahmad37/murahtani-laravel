@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
 use App\Models\User;
+use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -39,6 +40,25 @@ class DatabaseSeeder extends Seeder
             'slug' => 'pot'
         ]);
 
-        
+        Product::create([
+            'name' => 'Durian Musangking',
+            'code' => 'DRMK01',
+            'description' => 'Durian Musangking polybag 30 / 35 Tinggi 75cm sd 100cm',
+            'category_id' => 1
+        ]);
+
+        Product::create([
+            'name' => 'Durian Bawor',
+            'code' => 'DRBW01',
+            'description' => 'Durian Bawor polybag 30 / 35 Tinggi 75cm sd 100cm',
+            'category_id' => 1
+        ]);
+
+        Product::create([
+            'name' => 'Alpukat Miki',
+            'code' => 'ALMK01',
+            'description' => 'Alpukat Miki polybag 30 / 35 Tinggi 75cm sd 100cm', 
+            'category_id' => 1
+        ]);
     }
 }
