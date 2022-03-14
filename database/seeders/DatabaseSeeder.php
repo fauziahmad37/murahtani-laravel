@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Inventory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -64,6 +65,18 @@ class DatabaseSeeder extends Seeder
             'category_id' => 1
         ]);
 
-        
+        Inventory::create([
+            'product_id' => 1,
+            'sell_price' => 50000,
+            'average_buy_price' => 25000,
+            'first_stock' => 5,
+            'first_amount' => 125000,
+            'stock_in' => 0,
+            'in_amount' => 0,
+            'stock_out' => 0,
+            'out_amount' => 0,
+            'last_stock' => 5,
+            'last_amount' => 125000
+        ]);
     }
 }
