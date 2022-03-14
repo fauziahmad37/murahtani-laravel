@@ -63,5 +63,7 @@ class DatabaseSeeder extends Seeder
             'description' => 'Alpukat Miki polybag 30 / 35 Tinggi 75cm sd 100cm', 
             'category_id' => 1
         ]);
+
+        
     }
 }
