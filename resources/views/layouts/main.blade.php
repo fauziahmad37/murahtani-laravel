@@ -21,6 +21,7 @@
 
       @include('partials.header')
 
+     
       <div class="row">
         <div class="col-3">
 
@@ -102,6 +103,8 @@
           @yield('container')
         </div>
       </div>
+
+  
       
   
     </div>

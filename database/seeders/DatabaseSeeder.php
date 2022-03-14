@@ -43,6 +43,7 @@ class DatabaseSeeder extends Seeder
         Product::create([
             'name' => 'Durian Musangking',
             'code' => 'DRMK01',
+            'image_1' => 'IMG_20190307_170051.jpg',
             'description' => 'Durian Musangking polybag 30 / 35 Tinggi 75cm sd 100cm',
             'category_id' => 1
         ]);
@@ -50,6 +51,7 @@ class DatabaseSeeder extends Seeder
         Product::create([
             'name' => 'Durian Bawor',
             'code' => 'DRBW01',
+            'image_1' => 'IMG_20190307_170213.jpg',
             'description' => 'Durian Bawor polybag 30 / 35 Tinggi 75cm sd 100cm',
             'category_id' => 1
         ]);
@@ -57,6 +59,7 @@ class DatabaseSeeder extends Seeder
         Product::create([
             'name' => 'Alpukat Miki',
             'code' => 'ALMK01',
+            'image_1' => 'IMG_20190316_085235.jpg',
             'description' => 'Alpukat Miki polybag 30 / 35 Tinggi 75cm sd 100cm', 
             'category_id' => 1
         ]);
