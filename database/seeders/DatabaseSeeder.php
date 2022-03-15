@@ -45,6 +45,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Durian Musangking',
             'code' => 'DRMK01',
             'image_1' => 'IMG_20190307_170051.jpg',
+            'image_2' => 'IMG_20190307_170213.jpg',
+            'image_3' => 'IMG_20190316_085235.jpg',
             'description' => 'Durian Musangking polybag 30 / 35 Tinggi 75cm sd 100cm',
             'category_id' => 1
         ]);
@@ -53,6 +55,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Durian Bawor',
             'code' => 'DRBW01',
             'image_1' => 'IMG_20190307_170213.jpg',
+            'image_2' => 'IMG_20190307_170051.jpg',
+            'image_3' => 'IMG_20190316_085235.jpg',
             'description' => 'Durian Bawor polybag 30 / 35 Tinggi 75cm sd 100cm',
             'category_id' => 1
         ]);
@@ -61,6 +65,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'Alpukat Miki',
             'code' => 'ALMK01',
             'image_1' => 'IMG_20190316_085235.jpg',
+            'image_2' => 'IMG_20190307_170051.jpg',
+            'image_3' => 'IMG_20190307_170213.jpg',
             'description' => 'Alpukat Miki polybag 30 / 35 Tinggi 75cm sd 100cm', 
             'category_id' => 1
         ]);
@@ -94,7 +100,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Inventory::create([
-            'product_id' => 1,
+            'product_id' => 3,
             'sell_price' => 100000,
             'average_buy_price' => 50000,
             'first_stock' => 2,
