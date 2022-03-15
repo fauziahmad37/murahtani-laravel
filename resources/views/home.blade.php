@@ -56,7 +56,9 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">+ Keranjang</button>
+                <form action="/add_cart" method="POST">
+                  <button type="button" class="btn btn-primary">+ Keranjang</button>
+                </form>
               </div>
             </div>
           </div>
