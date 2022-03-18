@@ -1,5 +1,13 @@
 @extends('layouts.main')
 
+@section('header')
+    @include('partials.header')
+@endsection
+
+@section('sidebar')
+    @include('partials.sidebar')
+@endsection
+
 @section('container')
     <div class="row">
         @php
