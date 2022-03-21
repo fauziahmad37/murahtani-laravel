@@ -18,7 +18,8 @@ class HomeController extends Controller
     {
 
         return view('home', [
-            'inventories' => Inventory::all()
+            'inventories' => Inventory::all(),
+            'title' => 'home'
         ]);
     }
 

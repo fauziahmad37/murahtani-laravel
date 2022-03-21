@@ -26,7 +26,7 @@
 
       @yield('header')
      
-      <div class="row @php if($title == 'login') echo 'd-flex justify-content-center';  @endphp">
+      <div class="row @php if($title == 'login' || $title == 'Register') echo 'd-flex justify-content-center';  @endphp">
         @yield('sidebar')
 
         <div class="col-9">
