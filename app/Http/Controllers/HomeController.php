@@ -50,6 +50,8 @@ class HomeController extends Controller
         // lukas, null
         // null, semangka
 
+        // cobain bot tele
+
         // $inventories = Inventory::all();
         $inventories = new Inventory();
         $inventories->query();
