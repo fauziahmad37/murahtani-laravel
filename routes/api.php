@@ -17,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// api route butuh authorization
+// web route butuh authentication
+
+// header --Authorization: Bearer <token>
+
+// web app
+// login page (server:frontend) -> fill form (server:frontend) -> authentication (server:backend) -> create session server:backend -> redirect to home page (server:frontend)
+
+// mobile app using api
+// login page (frontend-mobile/independent web app)-> fill form (frontend) -> authentication (server:backend-php,node,golang) -> get token (mobile-have ttl - time to live) -> save token to local storage (mobile) -> redirect to home page (mobile)
