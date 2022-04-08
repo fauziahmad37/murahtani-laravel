@@ -16,7 +16,29 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/login', [LoginController::class, 'index']);
-Route::get('/register', [RegisterController::class, 'index']);
-Route::post('/register', [RegisterController::class, 'store']);
+
+// ref: https://laravel.com/docs/9.x/routing#required-parameters
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::group('login', function () {
+    Route::get('/', [LoginController::class, 'index'])->name('login');
+    Route::post('/', [LoginController::class, 'login'])->name('login.post');
+});
+
+Route::group('dashboard', function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+});
+
+// custom version
+Route::group('customer', function () {
+    Route::get('/', [CustomerController::class, 'index'])->name('customer');
+    Route::post('/', [CustomerController::class, 'store'])->name('customer.store');
+    Route::get('/{id}', [CustomerController::class, 'show'])->name('customer.show');
+    Route::put('/{id}', [CustomerController::class, 'update'])->name('customer.update');
+    Route::delete('/{id}', [CustomerController::class, 'destroy'])->name('customer.destroy');
+});
+
+// magic laravel
+// ref: https://laravel.com/docs/9.x/controllers#actions-handled-by-resource-controller
+Route::resource('products', [ProductController::class]);
