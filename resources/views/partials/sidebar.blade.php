@@ -1,4 +1,4 @@
-<div class="col-3">
+<div class="col-3 d-none d-sm-block">
 
     <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
       <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">

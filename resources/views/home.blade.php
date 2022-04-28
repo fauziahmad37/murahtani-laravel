@@ -14,7 +14,7 @@
             $a=1;    
         @endphp
         @foreach ($inventories as $inventory)
-        <div class="col-sm-4 mt-3">
+        <div class="col-lg-4 mt-3">
             <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
               <img class="card-img-top" src="{{ "img/product/" . $inventory->product->image_1 }}" alt="Card image cap">
               <div class="card-body bg-light">

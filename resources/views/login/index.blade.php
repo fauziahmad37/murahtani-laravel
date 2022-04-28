@@ -13,16 +13,23 @@
     @endif
 
     <main class="form-signin">
-      <form class="col-lg-12 mb-3">
+      <form class="col-lg-12 mb-3" action="/login" method="POST">
+        @csrf
+
         <h1 class="h3 mb-3 fw-normal text-center">Please login</h1>
     
         <div class="form-floating">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Email address</label>
+          <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" value="{{ old('email') }}" autofocus required>
+          <label for="email">Email address</label>
+          @error ('email')
+            <div class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+            </div> 
+          @enderror
         </div>
         <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-          <label for="floatingPassword">Password</label>
+          <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+          <label for="password">Password</label>
         </div>
     
         

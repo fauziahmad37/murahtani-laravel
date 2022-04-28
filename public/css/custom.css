@@ -6,8 +6,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 50px;
-        height: 50px;
+        width: 35px;
+        height: 35px;
         color: #333333;
         background: #ddd;
         border: none;
@@ -24,8 +24,8 @@
             position: absolute;
             top: -8px;
             right: -8px;
-            width: 25px;
-            height: 25px;
+            width: 20px;
+            height: 20px;
             background: red;
             color: #fff;
             display: flex;
@@ -57,4 +57,37 @@ border-top-right-radius: 0;
 .form-registration input{
     border-radius: 0;
     margin-bottom: -1px;
+}
+
+body > .container  p {
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+body > .container  p a {
+    text-decoration: none;
+    font-weight: 700;
+    color: green;
+}
+
+body > .container  p a:hover {
+    background-color: green;
+    color: white;
+    border-radius: 30px;
+    padding-bottom: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.header {
+    display: flex;
+}
+
+.selamat-datang {
+    flex: 1;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    color: #333;
 }

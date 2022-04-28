@@ -16,14 +16,14 @@
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/sidebars.css">
 
-    <title>Hello, world!</title>
+    <title>Murah Tani</title>
   </head>
   <body style="height: 2000px;">
 
-    @include('partials.navbar')
+    @include('partials.navbar') 
     
-    <div class="container" style="padding-top: 5%;">
-
+    <div class="container" style="padding-top: 2%;">
+      
       @yield('header')
      
       <div class="row @php if($title == 'login' || $title == 'Register') echo 'd-flex justify-content-center';  @endphp">
@@ -44,6 +44,7 @@
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
