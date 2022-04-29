@@ -27,6 +27,6 @@ class LoginController extends Controller
             return redirect('/dashboard')->with('status', 'You are logged in!');
          }
  
-         return back()->with('loginError', 'Login Failed!');
+         return back()->with('status', 'Login Failed!');
     }
 }
