@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,11 @@ class DashboardProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.products.create', [
+            "title" => "Create Post",
+            "active" => 'posts', 
+            "categories" => Category::all()
+        ]);
     }
 
     /**
