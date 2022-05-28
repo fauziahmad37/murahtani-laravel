@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
 use App\Models\Product;
+use App\Models\Category;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardProductController extends Controller
 {
@@ -48,7 +50,29 @@ class DashboardProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $validatedData = $request->validate([
+            'name' => 'required|unique:products|max:255',
+            'code' => 'required|unique:products|max:255',
+            'image' => 'image|file|max:2048',
+            'image2' => 'image|file|max:2048',
+            'image3' => 'image|file|max:2048',
+            'description' => 'required',
+            'category_id' => 'required'
+        ]);
+       
+        if($request->file('image') || $request->file('image2')){
+            $validatedData['image_1'] = $request->file('image')->store('products');
+            $validatedData['image_2'] = $request->file('image2')->store('products');
+            $validatedData['image_3'] = $request->file('image3')->store('products');
+        }
+
+        $validatedData['user_id'] = auth()->user()->id;
+        $validatedData['description'] = Str::limit(strip_tags($request->description), 200);
+
+        Product::create($validatedData);
+
+        return redirect('/dashboard/posts')->with('success', 'Post created successfully');
     }
 
     /**

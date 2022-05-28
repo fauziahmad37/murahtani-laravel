@@ -16,7 +16,7 @@
         @foreach ($inventories as $inventory)
         <div class="col-lg-4 mt-3">
             <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
-              <img class="card-img-top" src="{{ "img/product/" . $inventory->product->image_1 }}" alt="Card image cap">
+              <img class="card-img-top" src="{{ "/storage/" . $inventory->product->image_1 }}" alt="Card image cap">
               <div class="card-body bg-light">
                 <h5 class="card-title">{{ $inventory->product->name }}</h5>
                 <p class="card-text">{{ $inventory->product->description }}</p>
@@ -43,13 +43,13 @@
                   </div>
                   <div class="carousel-inner">
                     <div class="carousel-item active">
-                      <img src="/img/product/{{ $inventory->product->image_1 }}" class="d-block w-100" alt="...">
+                      <img src="/storage/{{ $inventory->product->image_1 }}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                      <img src="/img/product/{{ $inventory->product->image_2 }}" class="d-block w-100" alt="...">
+                      <img src="/storage/{{ $inventory->product->image_2 }}" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                      <img src="/img/product/{{ $inventory->product->image_3 }}" class="d-block w-100" alt="...">
+                      <img src="/storage/{{ $inventory->product->image_3 }}" class="d-block w-100" alt="...">
                     </div>
                   </div>
                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators{{ $a }}" data-bs-slide="prev">
