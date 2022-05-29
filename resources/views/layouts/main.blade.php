@@ -29,7 +29,7 @@
       <div class="row @php if($title == 'login' || $title == 'Register') echo 'd-flex justify-content-center';  @endphp">
         @yield('sidebar')
 
-        <div class="col-9">
+        <div class="col-sm-9">
           @yield('container')
         </div>
       </div>
