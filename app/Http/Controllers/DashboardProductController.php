@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class DashboardProductController extends Controller
@@ -81,9 +83,16 @@ class DashboardProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($post)
     {
-        //
+        $product = DB::table('products')
+            ->join('categories', 'products.category_id', '=', 'categories.id')
+            ->select('products.*', 'categories.name as category_name')
+            ->where('products.id', $post)->first();
+        
+        return view('dashboard.products.show', [
+            'product' => $product
+        ]);
     }
 
     /**
