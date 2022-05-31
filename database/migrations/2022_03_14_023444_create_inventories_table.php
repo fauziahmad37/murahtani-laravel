@@ -16,16 +16,16 @@ class CreateInventoriesTable extends Migration
         Schema::create('inventories', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('product_id');
-            $table->double('sell_price');
-            $table->double('average_buy_price');
-            $table->double('first_stock');
-            $table->double('first_amount');
-            $table->double('stock_in');
-            $table->double('in_amount');
-            $table->double('stock_out');
-            $table->double('out_amount');
-            $table->double('last_stock');
-            $table->double('last_amount');
+            $table->double('sell_price')->default(0);
+            $table->double('average_buy_price')->default(0);
+            $table->double('first_stock')->default(0);
+            $table->double('first_amount')->default(0);
+            $table->double('stock_in')->default(0);
+            $table->double('in_amount')->default(0);
+            $table->double('stock_out')->default(0);
+            $table->double('out_amount')->default(0);
+            $table->double('last_stock')->default(0);
+            $table->double('last_amount')->default(0);
             $table->timestamps();
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
