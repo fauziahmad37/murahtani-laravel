@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Product;
 use App\Models\Category;
+use Illuminate\Contracts\Support\ValidatedData;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -103,7 +104,12 @@ class DashboardProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('dashboard.products.edit', [
+            "title" => "Edit Post",
+            "active" => 'posts', 
+            "post" => Product::where('id', $id)->first(),
+            "categories" => Category::all()
+        ]);
     }
 
     /**
@@ -115,7 +121,42 @@ class DashboardProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'name' => 'required|max:255',
+            'code' => 'required|max:255',
+            'image' => 'image|file|max:2048',
+            'image2' => 'image|file|max:2048',
+            'image3' => 'image|file|max:2048',
+            'description' => 'required',
+            'category_id' => 'required'
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        if($request->file('image_1')){
+            if($request->oldImage){
+                Storage::delete($request->oldImage);
+            }
+            $validatedData['image_1'] = $request->file('image_1')->store('products');
+        }
+
+        if($request->file('image_2')){
+            if($request->oldImage2){
+                Storage::delete($request->oldImage2);
+            }
+            $validatedData['image_2'] = $request->file('image_2')->store('products');
+        }
+
+        if($request->file('image_3')){
+            if($request->oldImage3){
+                Storage::delete($request->oldImage3);
+            }
+            $validatedData['image_3'] = $request->file('image_3')->store('products');
+        }
+
+        Product::where('id', $id)->update($validatedData);
+
+        return redirect('/dashboard/posts')->with('success', 'Post updated successfully');
     }
 
     /**
