@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Inventory;
 use Illuminate\Contracts\Support\ValidatedData;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -73,7 +74,12 @@ class DashboardProductController extends Controller
         $validatedData['user_id'] = auth()->user()->id;
         $validatedData['description'] = Str::limit(strip_tags($request->description), 200);
 
-        Product::create($validatedData);
+        $insert_id = Product::create($validatedData)->id;
+
+        Inventory::create([
+            'product_id' => $insert_id,
+            'quantity' => 0
+        ]);
 
         return redirect('/dashboard/posts')->with('success', 'Post created successfully');
     }
@@ -165,8 +171,15 @@ class DashboardProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $post)
     {
-        //
+        if($post->image_1 || $post->image_2 || $post->image_3){
+            Storage::delete($post->image_1);
+            Storage::delete($post->image_2);
+            Storage::delete($post->image_3);
+        }
+        Product::destroy($post->id);
+
+        return redirect('/dashboard/posts')->with('success', 'Post has been deleted!');
     }
 }
