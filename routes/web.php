@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ReceiptStockController;
 use App\Http\Controllers\DashboardProductController;
 
 /*
@@ -30,3 +31,4 @@ Route::get('/dashboard', function(){
 })->middleware('auth');
 
 Route::resource('/dashboard/posts', DashboardProductController::class)->middleware('auth');
+Route::resource('/dashboard/receipt_stock', ReceiptStockController::class)->middleware('auth');

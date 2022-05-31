@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ReceiptStock;
 use Illuminate\Http\Request;
 
 class ReceiptStockController extends Controller
@@ -14,7 +15,7 @@ class ReceiptStockController extends Controller
     public function index()
     {
         //
-        return view('receipt_stock.index', [
+        return view('dashboard.receipt_stock.index', [
             "title" => "Receipt Stock",
             "active" => 'receipt_stock',
             "receipt_stocks" => ReceiptStock::all()

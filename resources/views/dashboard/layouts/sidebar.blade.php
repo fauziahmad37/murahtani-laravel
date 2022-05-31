@@ -13,6 +13,14 @@
             My Posts
           </a>
         </li>
+        
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/receipt_stock*') ? 'active' : '' }}" href="/dashboard/receipt_stock">
+            <span data-feather="file-text"></span>
+            Receipt Stock
+          </a>
+        </li>
+      
       </ul>
 
       @can('admin')
@@ -26,6 +34,7 @@
             Posts Categories
           </a>
         </li>
+        
       </ul>
       @endcan
 
