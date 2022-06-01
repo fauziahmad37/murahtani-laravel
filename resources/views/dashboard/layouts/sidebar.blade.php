@@ -13,6 +13,45 @@
             My Posts
           </a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="collapseExampleClick">
+            <span data-feather="folder"></span>
+            Master
+            </a>
+        </li>
+            
+
+        <div class="collapse" id="collapseExample">
+          <li class="nav-item">
+            <a class="nav-link ps-5" href="">
+              <span data-feather="file-text"></span>
+              Users
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ps-5" href="">
+              <span data-feather="file-text"></span>
+              Users
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link ps-5" href="">
+              <span data-feather="file-text"></span>
+              Users
+            </a>
+          </li>
+        </div>
+        
+        <script>
+          let collapse = document.getElementById('collapseExampleClick');
+          let collapseContent = document.getElementById('collapseExample');
+          collapse.addEventListener('click', function() {
+            collapseContent.classList.toggle('show');
+          });
+        </script>
+
+             
         
         <li class="nav-item">
           <a class="nav-link {{ Request::is('dashboard/receipt_stock*') ? 'active' : '' }}" href="/dashboard/receipt_stock">
